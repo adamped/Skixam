@@ -1,7 +1,7 @@
 ﻿using SkiaSharp;
 using System;
 
-namespace Sample.Droid
+namespace Skixam.Forms
 {
     public interface ISkiaViewController 
     {

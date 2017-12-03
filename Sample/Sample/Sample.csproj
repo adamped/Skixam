@@ -8,8 +8,4 @@
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.91635" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Skixam.Forms\Skixam.Forms.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -1,11 +1,8 @@
-﻿using Android.Content;
-using SkiaSharp;
+﻿using SkiaSharp;
 using Xamarin.Forms;
-using Xamarin.Forms.Platform.Android;
 
-namespace Sample.Droid
+namespace Skixam.Forms.Renderers
 {
-
     public class LabelRenderer
     {
         public void Render(Label label, SKCanvas canvas, Size size)
@@ -18,9 +15,7 @@ namespace Sample.Droid
                 var length = paint.MeasureText(label.Text);
 
                 canvas.DrawText(label.Text, 0, paint.TextSize, paint);
-                label.Layout(new Rectangle(0, 0, length, paint.TextSize));
             }
         }
-
     }
 }

@@ -26,6 +26,8 @@ using SkiaSharp;
 using Android.Graphics;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using Skixam.Forms;
+using Skixam.Forms.Renderers;
 
 namespace Sample.Droid
 {
@@ -343,7 +345,7 @@ namespace Sample.Droid
             {
                 if (child is Xamarin.Forms.Label)
                 {
-                    renderChildren.Add((canvas, width, height) => new LabelRenderer().Render((Xamarin.Forms.Label)child, _canvas, _size));
+                    renderChildren.Add((canvas, width, height) => new Skixam.Forms.Renderers.LabelRenderer().Render((Xamarin.Forms.Label)child, _canvas, _size));
                 }
 
             }

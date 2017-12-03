@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Android", "Sample\Sample\Sample.Android\Sample.Android.csproj", "{ABAAA741-E623-4BFE-9980-597AACAA2D7B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Android", "Sample\Sample.Android\Sample.Android.csproj", "{ABAAA741-E623-4BFE-9980-597AACAA2D7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.iOS", "Sample\Sample\Sample.iOS\Sample.iOS.csproj", "{12513395-D347-472E-8936-7470C287656D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.iOS", "Sample\Sample.iOS\Sample.iOS.csproj", "{12513395-D347-472E-8936-7470C287656D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample", "Sample\Sample\Sample\Sample.csproj", "{85C1C3E1-B6FF-49DA-B899-68B6CA935564}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample", "Sample\Sample\Sample.csproj", "{85C1C3E1-B6FF-49DA-B899-68B6CA935564}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Skixam.Forms", "Skixam.Forms\Skixam.Forms.csproj", "{C28DD476-DE01-42A6-975C-E42DB15D0DC0}"
 EndProject
