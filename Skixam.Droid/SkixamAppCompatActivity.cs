@@ -18,9 +18,7 @@ namespace Skixam.Droid
     {        
         Xamarin.Forms.Application _application;
         ARelativeLayout _layout;
-       
-        bool _renderersAdded;
-        
+     
         protected virtual bool AllowFragmentRestore => false;
 
         public event EventHandler ConfigurationChanged;
