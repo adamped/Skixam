@@ -3,9 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Sample"
              x:Class="Sample.MainPage">
-
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-
+  
+        <Label Text="Welcome to Xamarin.Forms in SkiaSharp!" />
+  
 </ContentPage>
