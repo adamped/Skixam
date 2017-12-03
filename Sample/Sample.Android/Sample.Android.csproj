@@ -61,8 +61,6 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="NativeSkiaView.cs" />
-    <Compile Include="SkixamAppCompatActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -85,6 +83,10 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Skixam.Droid\Skixam.Droid.csproj">
+      <Project>{abea2cfd-d73e-4154-a771-2c7e7832e298}</Project>
+      <Name>Skixam.Droid</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Skixam.Forms\Skixam.Forms.csproj">
       <Project>{c28dd476-de01-42a6-975c-e42db15d0dc0}</Project>
       <Name>Skixam.Forms</Name>

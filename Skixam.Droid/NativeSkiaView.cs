@@ -3,7 +3,7 @@ using Android.Views;
 using SkiaSharp;
 using Skixam.Forms;
 
-namespace Sample.Droid
+namespace Skixam.Droid
 {
     public class NativeSkiaView : View
     {

@@ -129,6 +129,12 @@
       <Project>{c28dd476-de01-42a6-975c-e42db15d0dc0}</Project>
       <Name>Skixam.Forms</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Skixam.iOS\Skixam.iOS.csproj">
+      <Project>{C6DBA67E-13F3-4E8D-B196-013B831F8EF1}</Project>
+      <Name>Skixam.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
+    </ProjectReference>
     <ProjectReference Include="..\Sample\Sample.csproj">
       <Project>{C3F876D1-8CD0-4314-AF3D-C614E0C73463}</Project>
       <Name>Sample</Name>
