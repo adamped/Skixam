@@ -31,12 +31,7 @@ namespace Skixam.iOS
             return true;
         }
 
-        // now in background
-        public override void DidEnterBackground(UIApplication uiApplication)
-        {
-            // applicationDidEnterBackground
-        }
-
+      
         // finish initialization before display to user
         public override bool FinishedLaunching(UIApplication uiApplication, NSDictionary launchOptions)
         {
@@ -81,19 +76,6 @@ namespace Skixam.iOS
             }
         }
 
-        public override void UserActivityUpdated(UIApplication application, NSUserActivity userActivity)
-        {
-            
-        }
-
-        // from background to foreground, not yet active
-        public override void WillEnterForeground(UIApplication uiApplication)
-        {
-            // applicationWillEnterForeground
-        }
-
-        // TODO where to execute heavy code, storing state, sending to server, etc 
-
         // first chance to execute code at launch time
         public override bool WillFinishLaunching(UIApplication uiApplication, NSDictionary launchOptions)
         {
@@ -104,13 +86,6 @@ namespace Skixam.iOS
             // application:willFinishLaunchingWithOptions
             // Restore ui state here
             return true;
-        }
-
-        // app is being terminated, not called if you app is suspended
-        public override void WillTerminate(UIApplication uiApplication)
-        {
-            // applicationWillTerminate
-            //application.SendTerminate ();
         }
 
         protected override void Dispose(bool disposing)
@@ -137,9 +112,7 @@ namespace Skixam.iOS
             if (args.PropertyName == "MainPage")
                 UpdateMainPage();
         }
-
-     
-
+        
         void SetMainPage()
         {
             UpdateMainPage();
@@ -161,10 +134,13 @@ namespace Skixam.iOS
                 foreach (var renderer in renderChildren)
                     renderer(canvas, w, h);
             }));
-            UIViewController vc = new UIViewController();
-            vc.View = view;
 
-            AddChild(_application.MainPage, renderChildren);
+            UIViewController vc = new UIViewController
+            {
+                View = view
+            };
+
+            AddRenderers(_application.MainPage, renderChildren);
 
             Window.RootViewController = vc;
             
@@ -173,7 +149,7 @@ namespace Skixam.iOS
         SKCanvas _canvas;
         Xamarin.Forms.Size _size;
 
-        void AddChild(Xamarin.Forms.Page page, IList<Action<SKCanvas, int, int>> renderChildren)
+        void AddRenderers(Xamarin.Forms.Page page, IList<Action<SKCanvas, int, int>> renderChildren)
         {
             foreach (var child in page.InternalChildren)
             {
@@ -181,10 +157,7 @@ namespace Skixam.iOS
                 {
                     renderChildren.Add((canvas, width, height) => new Skixam.Forms.Renderers.LabelRenderer().Render((Xamarin.Forms.Label)child, _canvas, _size));
                 }
-
             }
         }
-
-
     }
 }

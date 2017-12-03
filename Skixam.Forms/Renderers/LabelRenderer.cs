@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace Skixam.Forms.Renderers
 {
-    public class LabelRenderer
+    public class LabelRenderer: IRenderer<Label>
     {
         public void Render(Label label, SKCanvas canvas, Size size)
         {

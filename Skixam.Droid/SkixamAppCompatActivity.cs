@@ -6,6 +6,7 @@ using Android.Support.V7.App;
 using Android.Views;
 using SkiaSharp;
 using Skixam.Forms;
+using Skixam.Forms.Renderers;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms.Platform.Android;
@@ -16,7 +17,6 @@ namespace Skixam.Droid
     public class SkixamAppCompatActivity : AppCompatActivity, IDeviceInfoProvider
     {        
         Xamarin.Forms.Application _application;
-        
         ARelativeLayout _layout;
        
         bool _renderersAdded;
@@ -34,15 +34,6 @@ namespace Skixam.Droid
 
         protected void LoadApplication(Xamarin.Forms.Application application)
         {
-            if (!_renderersAdded)
-            {
-
-                //RegisterHandlerForDefaultRenderer(typeof(Xamarin.Forms.Button), typeof(FastRenderers.ButtonRenderer), typeof(ButtonRenderer));
-                //RegisterHandlerForDefaultRenderer(typeof(Label), typeof(FastRenderers.LabelRenderer), typeof(LabelRenderer));
-
-                _renderersAdded = true;
-            }
-
             _application = application ?? throw new ArgumentNullException("application");
             
             Xamarin.Forms.Application.SetCurrentApplication(application);
@@ -67,8 +58,7 @@ namespace Skixam.Droid
             
             Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
         }
-
-
+        
         SKCanvas _canvas;
         Xamarin.Forms.Size _size;
 
@@ -86,18 +76,17 @@ namespace Skixam.Droid
 
             _layout.BringToFront();
 
-            AddChild(page, renderChildren);
+            AddRenderers(page, renderChildren);
         }
 
-        void AddChild(Xamarin.Forms.Page page, IList<Action<SKCanvas, int, int>> renderChildren)
+        void AddRenderers(Xamarin.Forms.Page page, IList<Action<SKCanvas, int, int>> renderChildren)
         {
             foreach (var child in page.InternalChildren)
             {
                 if (child is Xamarin.Forms.Label)
-                {
+                {                   
                     renderChildren.Add((canvas, width, height) => new Skixam.Forms.Renderers.LabelRenderer().Render((Xamarin.Forms.Label)child, _canvas, _size));
                 }
-
             }
         }
 
@@ -105,7 +94,6 @@ namespace Skixam.Droid
         {
             InternalSetPage(_application.MainPage);
         }
-        
         
     }
 }
